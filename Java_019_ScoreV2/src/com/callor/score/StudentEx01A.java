@@ -3,7 +3,7 @@ package com.callor.score;
 import com.callor.score.impl.StudentServiceImplV1A;
 import com.callor.score.service.StudentServiceA;
 
-public class ScoreEx01A {
+public class StudentEx01A {
 
 	public static void main(String[] args) {
 		

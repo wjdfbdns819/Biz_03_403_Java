@@ -46,7 +46,7 @@ public class StudentServiceImplV1A implements StudentServiceA {
 		this.studentFile = fileName;
 		
 		studentList = new ArrayList<StudentVOA>();
-		
+		this.loadStudent();
 		// 클래스를 객체로 생성할때 method를 호출하여
 		//	데이터를 사용하도록 준비해 달라
 	}
@@ -85,7 +85,7 @@ public class StudentServiceImplV1A implements StudentServiceA {
 				studentList.add(studentVO);
 				
 				//Debugin code
-				System.out.println(studentVO.toString());
+				// System.out.println(studentVO.toString());
 			}
 			buffer.close();
 			
@@ -140,7 +140,27 @@ public class StudentServiceImplV1A implements StudentServiceA {
 
 	@Override
 	public StudentVOA getStudent(String num) {
-		// TODO Auto-generated method stub
+		// TODO 학번으로 학생 조회하여 학생정보 return
+		
+		// 1번 코드
+		int nSize = studentList.size();
+		for(int i = 0 ; i < nSize ; i++) {
+			
+			// StrudentVO() vo = null;
+			// vo = studentList.get(i);
+			StudentVOA vo = studentList.get(i);
+			if(vo.getNum().equals(num)) {
+				return vo;
+			}
+		}
+		
+		// 2번 코드
+		// 새로운 for, forEach
+		// 확장된 for() 이용
+		for(StudentVOA vo : studentList) { 
+			if(vo.getNum().equals(num)) return vo;
+			
+		}
 		return null;
 	}
 
