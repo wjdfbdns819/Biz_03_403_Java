@@ -1,6 +1,7 @@
 package com.callor.score.impl;
 
 import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -54,7 +55,10 @@ public class WordServiceImplV1A implements WordService {
 				wordVO.setEnglish(words[영어]);
 				wordVO.setKorea(words[한글]);
 				wordList.add(wordVO);
+				
+				System.out.println(wordList.toString());
 			}
+			buffer.close();
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
